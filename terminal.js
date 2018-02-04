@@ -13,7 +13,7 @@ var getAll = function (selector, scope) {
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
   var txt = `Hello
-            [Entry mode; press Ctrl+D to save and quit; press Ctrl+C to quit without saving]
+            [Entry mode; press Ctrl+D to save and quit; press Ctrl+Q to quit without saving]
 
             ###Hey, I'm a software developer from India.I can help you build your next product.
 
