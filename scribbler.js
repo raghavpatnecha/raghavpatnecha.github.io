@@ -12,15 +12,17 @@ var getAll = function (selector, scope) {
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
-  var txt = `scribbler
+  var txt = `Hello
             [Entry mode; press Ctrl+D to save and quit; press Ctrl+C to quit without saving]
 
-            ###todo for new year dinner party
+            ###Hey, I'm a software developer from India.I can help you build your next product.
 
-            - milk
-            - butter
-            - green onion
-            - lots and lots of kiwis 🥝`;
+            - Python
+            - Web Development and Databases
+            - Data Structures and Algorithms
+			- Internet of Things
+			- ML and AI
+            - Blockchain and DAG`;
   var speed = 60;
 
   function typeItOut () {
