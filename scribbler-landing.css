@@ -1,6 +1,8 @@
 /* nav specialized to landing page */
 .logo {
-  background: url('logo.svg') no-repeat;
+  background: url('mylogo.svg') no-repeat;
+  height:120%;
+  width:120%;
   background-size: contain;
   margin: 1rem 0 0 1rem;
 }
