@@ -1,38 +1,314 @@
-<!doctype html>
 <html>
-  <head>
-      <meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Raghav Patnecha - Home</title>
-      <link rel="icon" href="mylogo.png" type="image/gif" sizes="16x16">
+     
+
+
+	 <title>Raghav Patnecha - Home</title>
+	 
+	 	
+	 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-      <link rel="stylesheet" href="global.css">
-      <link rel="stylesheet" href="landing.css">
-     
-  </head>
-  <body>
-    <nav>
+ 	
+
+	  <link rel="stylesheet" href="global.css">
+	    <link rel="stylesheet" href="landing.css">
+ <link rel="stylesheet" type="text/css" href="css/demo.css" /> 
+		<link rel="stylesheet" type="text/css" href="css/pieces.css" />		
+
+		
+ <style>
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.wrap {
+  height: 48%;
+  min-height: 200px;
+  perspective: 580px;
+	position: relative;
+	z-index: 4;
+}
+
+.top {
+ 
+  height: 100%;
+  position: absolute;
+  width: 100%;
+ background-color: white;
+      //box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  transition: 2s top ease-out;
+	top: 0;
+}
+
+.bottom {
+ 
+  //height: 100vh;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  //  box-shadow: 0 0 10px rgba(0,0,0,.45);
+  transition: 2s top ease-out;
+	top: 0;
+}
+
+
+
+.slide-up {
+  top: -5%;
+  transform: rotateX(-12deg);
+  transform-style: preserve-3d;
+  transition-property: 2s transform ease-in-out;
+}
+
+.slide-down {
+  top: 10%;
+  transform: rotateX(7deg);
+  transform-style: preserve-3d;
+  transition-property: 2s transform ease-in-out;
+}
+
+.trap {
+	display: none;
+	z-index: 5;
+	opacity: 1;
+  transition-property: opacity, ease-in-out;
+}
+
+.trap h2 {
+	//color:white;
+//font-family: FreeMono,monospace;
+}
+
+.play{
+   position: absolute;
+    left: 15%;
+    margin-top: 8.5%;
+    width: 15%;
+    
+    padding: 4px;
+    font-family: FreeMono,monospace;
+    font-size: 35px;
+    color: #50b77a;
+	
+}
+
+
+.play span {
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100%;
+}
+
+.noplay span {
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100%;
+}
+
+
+.play::before, .noplay::before {
+	content: '';
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(img/noise.gif);
+	background-size: 300px;
+	z-index: -99;
+	opacity: .8;
+}
+
+
+
+.noplay{
+    position: absolute;
+    left: 90%;
+    margin-top: 8.5%;
+    width: 15%;
+    padding: 2px;
+    //color: black;
+    //background: #f48020;
+	color: #e04643;
+	    font-size: 35px;
+    font-family: FreeMono,monospace;
+}
+
+.letter {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+.hide {
+	position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+  top: 0;
+  left: 0;
+  display: block;
+	//background: #2B2F47;
+	//background-image: url(../img/noise.gif);
+}
+
+  .trap {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 30%;
+  left: 40%;
+  text-align: center;
+  
+ width :100%;
+  cursor: pointer;
+}
+
+
+.zoro {
+  opacity: 0;
+  transition-property: opacity, left, top, ease-in-out;
+  transition-duration: .75s, .75s, 0s;
+  transition-delay: .75s, .75s, .75s;
+}
+.zoo {
+  opacity: 0;
+  transition-property: opacity, left, top, ease-in-out;
+  transition-duration: 2s, 2s, 0s;
+  transition-delay: 2s, 2s, 2s;
+}
+
+.lost {
+  transform: rotateX(69deg);
+  transition: transform 2s ease-in-out;
+}
+
+.los {
+  transform: rotateX(-30deg);
+  transition: transform 2s ease-in-out;
+}
+
+.zindex{
+z-index:999 !important;
+  transition-property: z-index, ease-out;
+  transition-duration: 2s, 2s, 0s;
+  transition-delay: 3.75s, 3.75s, 3.75s;
+}
+
+.hid{
+//display: none;
+  opacity: 0;
+  transition-property: opacity, left, top, ease-in-out;
+  transition-duration: 2s, 2s, 0s;
+  transition-delay: 2s, 2s, 2s;
+}	
+		
+	
+</style>
+
+	
+</head>
+<body id= "target">
+<div class="wrap">
+	<div class="top">
+	 <nav>
       <div class="logo"></div>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-       
+        <!-- <li class="menu__item"><a href="doc.html" class="link link--dark"><i class="fa fa-book"></i> Documentation</a></li> -->
         <li class="menu__item"><a href="https://github.com/raghavpatnecha" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
       </ul>
     </nav>
     <div class="hero">
-      <h1 class="hero__title">Raghav Patnecha</h1>
+      <h1 class="hero__title" id="raghav">Raghav Patnecha</h1>
       <p class="hero__description">Take your markdown notes in terminal</p>
     </div>
+		</div>
+</div>
+<div class="trap">
+
+	<h2 class="play word" id="yes" data-image-death="img/death.svg" data-images-char-1="img/r1.png,img/r2.png,img/e1.jpeg" data-images-char-2="img/a1.png,img/a2.png,img/a3.png" data-images-char-3="img/n1.png,img/n2.png,img/n3.png" data-images-char-4="img/s1.png,img/s2.png,img/s3.png" data-images-char-5="img/o1.png,img/o2.png,img/o3.png" data-images-char-6="img/m1.png,img/m2.png,img/m3.png" data-background-colors="#232323,#232323,#232323,#232323,#232323,#232323">Enter</h2>
+	<h2 class="noplay word" id="no" data-image-death="img/death.svg" data-images-char-1="img/r1.png,img/r2.png,img/e1.jpeg" data-images-char-2="img/a1.png,img/a2.png,img/a3.png" data-images-char-3="img/n1.png,img/n2.png,img/n3.png" data-images-char-4="img/s1.png,img/s2.png,img/s3.png" data-images-char-5="img/o1.png,img/o2.png,img/o3.png" data-images-char-6="img/m1.png,img/m2.png,img/m3.png" data-background-colors="#f5a4bf,#336ff0,#ffea9e,#33beff,#a5d613,#f89a53">No thanks</h2>
+	
+
+
+	</div>
+
+<div class="hide">
+	<main>
+			<div class="pieces" style="background-image: url(img/code_final_2.jpg)" data-img-alt="url(img/alt_final_7.jpg)" data-img-code="url(img/code_final_2.jpg)"></div>
+			<div class="overlay overlay--hidden"></div>
+			<div class="content">
+				<div class="content__inner">
+					<div class="content__top">
+						<h2 class="title">
+							<span class="title__inner mode mode--design" data-switch data-glitch>Raghav Patnecha</span>
+						</h2>
+						<div class="controls">
+						
+							<button class="btn btn--menu mode mode--design" data-switch>
+								<svg class="icon icon--menu"><use xlink:href="#icon-menu"></use></svg>
+								<svg class="icon icon--menu-alt"><use xlink:href="#icon-menu-alt"></use></svg>
+							</button>
+						</div>
+					</div>
+					<div class="menu1">
+						<ul class="menu__inner">
+							<li class="menu__item"><a class="menu__link" data-switch href="https://www.uplabs.com/raghavpatnecha06">On Interface Design</a></li>
+							<!-- <li class="menu__item"><a class="menu__link" data-switch>Portfolio</a></li> -->
+							<li class="menu__item"><a class="menu__link" href="https://github.com/raghavpatnecha/E-voting-using-Tangle/blob/master/Whitepaper_final.pdf" data-switch>Case Studies</a></li>
+							<li class="menu__item"><a class="menu__link" href="https://medium.com/@raghavpatnecha06" data-switch>Musings</a></li>
+						</ul>
+					</div>
+					<div class="menu1 menu--code">
+						<ul class="menu__inner">
+							<li class="menu__item"><a class="menu__link" data-switch>Web development/Wordpress/e-commerce</a></li>
+							<li class="menu__item"><a class="menu__link" data-switch>Python/Flask</a></li>
+							<li class="menu__item"><a class="menu__link" data-switch>Rest API/Postgres/javascript</a></li>
+							<li class="menu__item"><a class="menu__link" data-switch>Bloackchain/IOT</a></li>
+							<li class="menu__item"><a class="menu__link" href="https://github.com/raghavpatnecha" data-switch>> Find me on GitHub</a></li>
+						</ul>
+					</div>
+					<div class="content__bottom">
+						<div class="switch mode mode--design">
+							<a class="switch__item switch__item--current">Designer</a>
+							<a class="switch__item"><span class="mode mode--design" data-switch data-glitch>Coder</span></a>
+						</div>
+						<div class="link-wrap">
+							<a class="contact-link mode mode--design" href="mailto:raghavpatnecha06@gmail.com" data-switch data-glitch>Work with me</a>
+						</div>
+					</div>
+					
+				</div><!-- /content__inner-->
+			</div><!-- /content -->
+			<div class="loading"></div>
+		</main>
+</div>
+
+
+<div class="wrap">
+	<div class="bottom">
     <div class="hero__terminal">
       <pre>
         <!-- Place your demo code here -->
         <code class="shell-session demo">RaghavPatnecha ~ $ </code>
       </pre>
     </div>
-    <div class="wrapper">
+		
+		
+
+
+
+		 <div class="wrapper">
       <div class="installation">
         <h3 class="section__title">Projects</h3>
         <div class="tab__container">
@@ -58,7 +334,7 @@
         <div class="feature__item">
           <h3 class="section__title">Foobar</a></h3>
           <p>This contains my codes to the google foobar challenge.To read about how I foobar found me go to my medium page.</p>
-		   <span class="code code--inline"><a href="https://github.com/raghavpatnecha/Foobar">https://github.com/raghavpatnecha/foo</a></span>
+		   <span class="code code--inline"><a href="https://github.com/raghavpatnecha/foo">https://github.com/raghavpatnecha/foo</a></span>
         </div>
         <div class="feature__item">
           <h3 class="section__title">Mass Mailer</a></h3>
@@ -66,7 +342,18 @@
 		  <span class="code code--inline"><a href="https://github.com/raghavpatnecha/automatemail">https://github.com/raghavpatnecha/automatemail</a></span>
 		
         </div>
-     
+      <!--   <div class="feature__item">
+          <h3 class="section__title">Configuration</h3>
+          <p>Maintain all your settings in a single <span class="code code--inline">config.json</span> file. Never need to redo the setting every single time jotting down a note.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">Highlightings</h3>
+          <p>For better readability, scribbler has a clean, beautiful color scheme allow you to scan files fast.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">Keybindings</h3>
+          <p>You can expect common keybindings for scribbler. Customize <span class="code code--inline">bindings.json</span> for your own liking! </p>
+        </div> -->
       </div>
       <div class="keybinding">
         <ul class="keybinding__detail">
@@ -74,14 +361,14 @@
           <li>YouTube <span class="keybinding__label">Ctrl+Y</span></li>
           <li>Medium <span class="keybinding__label">Ctrl+M</span></li>
           <li>LinkedIn <span class="keybinding__label">Ctrl+L</span></li>
-      
+          <!-- <li>Undo <span class="keybinding__label">Cmd+Z</span></li> -->
         </ul>
         <ul class="keybinding__detail">
           <h3 class="keybinding__title">Media Keybindings</h3>
           <li><span class="keybinding__label">explorer "https://www.youtube.com/channel/UCjiKOCK8sSYNMsH649IeAHg"</span> </li>
           <li><span class="keybinding__label">xdg-open https://medium.com/@raghavpatnecha06</span> </li>
           <li><span class="keybinding__label">open https://www.linkedin.com/in/raghavpatnecha/</span> </li>
-         
+          <!-- <li><span class="keybinding__label">Ctrl+T</span> Insert Table</li> -->
         </ul>
       </div>
       <div class="callout">
@@ -130,16 +417,115 @@
             </ul>
           </div>
         </div>
-      
+        <!-- <div class="changelog__callout"> -->
+          <!-- <a href="#" class="button--secondary">Checkout Full Log</a> -->
+        <!-- </div> -->
       </div>
     </div>
     <footer class="footer">Raghav Patnecha GitHub Page 2018</footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+	</div>
+	
+</div>	
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="terminal.js"></script>
+	
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap-bind-dictionary.min.js"></script>
-	
 	<script src="keybindings.js"></script>
-  </body>
+
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script>
+
+// Loading a page as an example
+
+$('#raghav').click(function(){
+event.preventDefault();
+	//console.log(searchInput.value);
+
+	//submit(searchInput.value);
+	    	if($('.hide').hasClass('bar')) {
+			$('.trap').hide();
+		}
+		else {
+			$('.trap').show();
+		}
+		$('.top').toggleClass('slide-up');
+		$('.bottom').toggleClass('slide-down');
+		//$('.hide').toggleClass('bar');
+	
+});
+
+
+var typingTimer;                //timer identifier
+var doneTypingInterval = 1000;  //time in ms, 5 second for example
+var $input = $('#target');
+var keynum;
+var awes = [];
+//on keyup, start the countdown
+$input.on('keyup', function (e) {
+if(window.event) { // IE                    
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera                   
+      keynum = e.which;
+    }
+   var charStr = String.fromCharCode(keynum);
+   awes.push(charStr);
+   
+  
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(doneTyping, doneTypingInterval);
+  
+});
+
+//on keydown, clear the countdown 
+$input.on('keydown', function () {
+  clearTimeout(typingTimer);
+});
+
+//user is "finished typing," do something
+function doneTyping () {
+var word = awes.join('')
+
+if ( word.indexOf('AWESOME') >= 0) {
+  if($('.hide').hasClass('bar')) {
+			$('.trap').hide();
+		}
+		else {
+			$('.trap').show();
+		}
+		$('.top').toggleClass('slide-up');
+		$('.bottom').toggleClass('slide-down');
+		}
+		
+		}
+
+$('#yes').click(function(){
+     	$('.top').toggleClass('los');
+		$('.bottom').toggleClass('lost');
+		$('.wrap').toggleClass('zoo');
+		$('.trap').toggleClass('hid');
+		$('.hide').toggleClass('zindex');
+	
+  });
+  
+$('#no').click(function(){
+     	$('.top').removeClass('slide-up');
+		$('.bottom').removeClass('slide-down');
+		$('.trap').toggleClass('zoro');
+		
+		//$('.wrapper').toggleClass('hidden');
+  });  
+
+
+  
+</script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/charming.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/demo2.js"></script>
+</body>
 </html>
