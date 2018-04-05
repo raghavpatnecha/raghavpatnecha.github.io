@@ -4,4 +4,4 @@ This repository is rendered online at http://raghavpatnecha.github.io, it contai
 and maintained by Raghav Patnecha.
 
 
-# # Type "AWESOME"
+#  Type "AWESOME"
