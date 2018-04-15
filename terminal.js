@@ -22,7 +22,9 @@ if (document.getElementsByClassName('demo').length > 0) {
             - Data Structures and Algorithms
 			- Internet of Things
 			- ML and AI
-            - Blockchain and DAG`;
+            - Blockchain and DAG
+			
+			TYPE AWESOME or press Ctrl+B to explore more `;
   var speed = 60;
 
   function typeItOut () {
