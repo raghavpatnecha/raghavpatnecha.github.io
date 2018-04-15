@@ -32,4 +32,21 @@ Mousetrap.bind('ctrl+q', function(e) {
  if (confirm("Do You Want To Close This Window?")) {
     close();
   }
+  
+
+ 
+});
+
+Mousetrap.bind('ctrl+b', function(e) {
+
+  if($('.hide').hasClass('bar')) {
+			$('.trap').hide();
+		}
+		else {
+			$('.trap').show();
+		}
+		$('.top').toggleClass('slide-up');
+		$('.bottom').toggleClass('slide-down');
+		
+
 });
